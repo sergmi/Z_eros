@@ -86,7 +86,7 @@ function factorial_double(n){
 }
 
 
-let f1=expression.match(/\d+(?=!!)/g),res=1,i,k,m,l,result;
+let f1=expression.match(/\d+(?=!!)/g),res=1,i,k,m,l,s,result;
 	
 if(f1){for (i=0;i<f1.length;i++){
 	res=multiplycation(res,factorial_double(+f1[i]));
@@ -109,6 +109,12 @@ let f4=expression.match(/^\d{1}(?=!)/g);
 
 if(f4){for (l=0;l<f4.length;l++){
 	res=multiplycation(res,factorial(+f4[l]));
+}}
+
+let f5=expression.match(/\d{3}(?=!)/g);
+
+if(f5){for (s=0;s<f5.length;s++){
+	res=multiplycation(res,factorial(+f5[s]));
 }}
 
 res=res.match(/0*$/)[0].length;
