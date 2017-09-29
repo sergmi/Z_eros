@@ -86,17 +86,24 @@ function factorial_double(n){
 }
 
 
-let f1=expression.match(/\d+(?=!!)/g),res=1,i,k,m,result;
+let f1=expression.match(/\d+(?=!!)/g),res=1,i,k,m,l,result;
 	
 if(f1){for (i=0;i<f1.length;i++){
 	res=multiplycation(res,factorial_double(+f1[i]));
 	expression=expression.replace('!!','');
 }}
 	
-let f2=expression.match(/\d{2}(?=!)/g);
+	
+let f2=expression.match(/(?=\*)\d{3}(?=!)/g);
 
 if(f2){for (k=0;k<f2.length;k++){
 	res=multiplycation(res,factorial(+f2[k]));
+}}	
+	
+let f4=expression.match(/(?=\*)\d{2}(?=!)/g);
+
+if(f4){for (l=0;l<f4.length;l++){
+	res=multiplycation(res,factorial(+f4[l]));
 }}
 
 let f3=expression.match(/(?=\*)\d{1}(?=!)/g);
