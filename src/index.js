@@ -85,6 +85,7 @@ function factorial_double(n){
 		}
 }
 
+
 let f1=expression.match(/\d+(?=!!)/g),res=1,i,k,m,result;
 	
 if(f1){for (i=0;i<f1.length;i++){
